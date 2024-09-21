@@ -36,10 +36,7 @@ def predict_datapoint():
 
         new_data_scale = standard_scaler.transform([[Temperature,RH,Ws,Rain,FFMC,DMC,ISI,Classes,Region]])
 
-        print("\n\nnew_data_scale : ", new_data_scale,"\n\n",ridge_model,"\n\n akshay ransyeee\n\n")
         result = ridge_model.predict(new_data_scale)
-
-        print("\n\n\n result", result,"\n\n\n")
 
         return render_template('home.html',results = result[0])
     else:
